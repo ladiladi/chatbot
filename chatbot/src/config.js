@@ -1,14 +1,14 @@
 import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 
-import LearningOptions from "./components/LearningOptions/LearningOptions";
+import InformationOptions from "./components/InformationOptions/informationOptions";
 import LinkList from "./components/LinkList/LinkList";
 
 const config = {
-    botName: "LearningBot",
+    botName: "InfoBot",
     initialMessages: [
-        createChatBotMessage("Hi, I'm here to help. What do you want to learn?", {
-        widget: "learningOptions",
+        createChatBotMessage("Hi, I'm here to help. What do you want to know?", {
+        widget: "informationOptions",
     }),
     ],
     customStyles: {
@@ -21,28 +21,51 @@ const config = {
     },
     widgets: [
         {
-            widgetName: "learningOptions",
-            widgetFunc: (props) => <LearningOptions {...props} />,
+            widgetName: "informationOptions",
+            widgetFunc: (props) => <InformationOptions {...props} />,
         },
         {
-            widgetName: "javascriptLinks",
+            widgetName: "projectLinks",
             widgetFunc: (props) => <LinkList {...props} />,
             props: {
                 options: [
                     {
-                        text: "Introduction to JS",
-                        url: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/",
+                        text: "React Recipe App",
+                        url: "https://ladiladi.github.io/react-recipe-app/",
                         id: 1,
                     },
                     {
-                        text: "Mozilla JS Guide",
-                        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+                        text: "React Quiz App",
+                        url: "https://ladiladi.github.io/react-quiz-app/",
                         id: 2,
                     },
                     {
-                        text: "Frontend Masters",
-                        url: "https://frontendmasters.com",
+                        text: "Shopping cart",
+                        url: "https://ladiladi.github.io/js-shopping-cart/",
                         id: 3,
+                    },
+                ]
+            }
+        },
+        {
+            widgetName: "contactLinks",
+            widgetFunc: (props) => <LinkList {...props} />,
+            props: {
+                options: [
+                    {
+                        text: "Email",
+                        url: "mailto:tony.valkama@outlook.com",
+                        id: 1,  
+                    },
+                    {
+                        text: "LinkedIn",
+                        url: "https://linkedin.com/in/tony-v-55887b88",
+                        id: 2,  
+                    },
+                    {
+                        text: "GitHub",
+                        url: "https://github.com/ladiladi",
+                        id: 3,  
                     },
                 ]
             }

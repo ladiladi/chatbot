@@ -10,8 +10,20 @@ class MessageParser {
             this.actionProvider.greet();
         }
 
-        if (lowerCaseMessage.includes("javascript")) {
-            this.actionProvider.handleJavascript();
+        if (lowerCaseMessage.includes("projects")) {
+            this.actionProvider.handleProjects();
+        }
+
+        if (lowerCaseMessage.includes("contact")) {
+            this.actionProvider.handleContact();
+        }
+
+        if (lowerCaseMessage.includes("courses")) {
+            this.actionProvider.handleCourses();
+        }
+
+        if (lowerCaseMessage.includes("about") || lowerCaseMessage.includes("more")) {
+            this.actionProvider.handlePersonal();
         }
     }
 }
